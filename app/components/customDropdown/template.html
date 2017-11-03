@@ -1,0 +1,16 @@
+<div class="">
+  <div>
+    <div uib-dropdown on-toggle="toggled(open)" class="dropdown-filer-container">
+      <a href id="brand-dropdown" class="sm-font dropdown-placeholder" ng-class="options.titleClass" ng-disabled="items.length===0"
+        uib-dropdown-toggle>
+        <span class="text-show">{{selectedItem.name || placeholder || 'Select'}}</span>
+        <span class="triangle-down" ng-class="options.iconDownClass">&#9661;</span>
+      </a>
+      <ul class="dropdown-menu dropdown-dark" uib-dropdown-menu aria-labelledby="brand-dropdown">
+        <li ng-repeat="item in items">
+          <a ng-class="options.itemClass" href ng-click="_onSelect(item)">{{item.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

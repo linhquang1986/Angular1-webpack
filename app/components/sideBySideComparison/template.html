@@ -1,0 +1,50 @@
+<div class="bg-light sidebyside-comparision">
+  <div class="container">
+    <div class="text-uppercase">{{product.name}}</div>
+    <h1 class="comparision-text text-uppercase mt-0">side-by-side comparisons</h1>
+    <div class="comparision-box mt-30" ng-repeat="data in comparationData track by $index">
+      <div class="row relative">
+        <div class="col-md-6">
+          <div class="row cursor-pointer" ng-click="openProductReview(product.id)">
+            <div class="col-md-6">
+              <div class="flex-box comparisons-flexbox">
+                <div class="flex-container sbs-img">
+                  <img src="{{product.image}}" alt="" class="">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 text-center md-sbs-text-info">
+              <div class="flex-box comparisons-flexbox ">
+                <div class="">
+                  <div class="comparision-prod-name text-uppercase" title="{{product.brandName || '&nbsp;'}} {{product.model || '&nbsp;'}}">{{product.brandName || '&nbsp;'}} {{product.model || '&nbsp;'}}</div>
+                  <div class="comparision-prod-score my-info">{{product.overallScore}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="vs-text">VS</span>
+        <div class="col-md-6">
+          <div class="row cursor-pointer" ng-click="openProductReview(data.id)">
+            <div class="col-md-6 text-center md-sbs-text-info">
+              <div class="flex-box comparisons-flexbox">
+                <div class="">
+                  <div class="comparision-prod-name text-uppercase" title="{{data.brandName}} {{data.name}}">{{data.brandName}} {{data.name}}</div>
+                  <div class="comparision-prod-score other-info">{{data.score}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6" >
+              <div class="flex-box comparisons-flexbox">
+                <div class="flex-container sbs-img">
+                  <img src="{{data.image}}" alt="" class="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

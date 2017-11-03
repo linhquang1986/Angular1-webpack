@@ -1,0 +1,30 @@
+<div class="">
+  <div class="filter-heading filter-step first-step text-uppercase">Choose a Category</div>
+  <div class="text-center">
+    <ul class="list-unstyled list-carousel-cats">
+      <li>
+        <a ng-click="jumpToPrev()" class="lnk-yellow btn-carousel-control">&#9665;</a>
+      </li>
+      <li ng-repeat="cat in categories track by $index" ng-mouseover="hightlight(cat, true)" ng-mouseleave="hightlight(cat, false)"
+        ng-click="chooseCategory(cat)" ng-class="cat.name==currentCategory.name?'active':''">
+        <div>
+          <span class="icon-big-circle">
+            <img src="{{cat._image_}}" alt="" style="height: 33px;">
+          </span>
+          <!--<span class="icon-big-circle">
+            <i class="sprite icon-monitor-x" ng-show="cat.name=='TV'"></i>
+            <i class="sprite icon-studio-x" ng-show="cat.name=='Powered Studio Monitors'"></i>
+            <i class="sprite icon-amplifier-x" ng-show="cat.name=='Amplifiers'"></i>
+            <i class="sprite icon-speaker-x" ng-show="cat.name=='PC Speakers'"></i>
+          </span>-->
+        </div>
+      </li>
+      <li>
+        <a ng-click="jumpToNext()" class="lnk-yellow btn-carousel-control">&#9655;</a>
+      </li>
+    </ul>
+  </div>
+  <div class="cat-active sm-font mt-20 white-color text-center">
+    <span class="text-uppercase">{{currentCategory.name}}</span>
+  </div>
+</div>

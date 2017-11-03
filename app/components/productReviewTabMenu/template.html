@@ -1,0 +1,32 @@
+<div class="product-menu-bar  container">
+  <div class="clearfix bg-dark">
+    <ul class="pull-left list-unstyled">
+      <li ng-class="config.selectedTabId=='SCORES'?'active':''">
+        <a ng-click="changeTab('SCORES')">Scores</a>
+      </li>
+      <li ng-class="config.selectedTabId=='SPECIFICATIONS'?'active':''">
+        <a ng-click="changeTab('SPECIFICATIONS')">Specifications</a>
+      </li>
+      <li ng-class="config.selectedTabId=='MEASUREMENTS'?'active':''">
+        <a ng-click="changeTab('MEASUREMENTS')">Measurements</a>
+      </li>
+    </ul>
+    <ul class="pull-right list-unstyled tab-compare-model">
+      <li ng-class="config.selectedTabId=='COMPARE'?'active':''">
+        <a ng-click="toggleCompareModel()">
+          Compare Model
+          <span class="char-next lnk-yellow" ng-show="!config.openCompareModel">&#9655;</span>
+          <span class="char-next lnk-yellow" ng-show="config.openCompareModel">&#9661;</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Content -->
+<div>
+  <compare-model-selector product="product" product-type="product.type" ng-show="config.openCompareModel"></compare-model-selector>
+  <scoring-tab-content product="product" ng-show="config.selectedTabId ==='SCORES' || config.selectedTabId=='COMPARE'"></scoring-tab-content>
+  <specification-tab-content product="product" ng-show="config.selectedTabId ==='SPECIFICATIONS'"></specification-tab-content>
+  <measurement-tab-content product="product" ng-show="config.selectedTabId ==='MEASUREMENTS'"></measurement-tab-content>
+</div>
+<!-- Content -->

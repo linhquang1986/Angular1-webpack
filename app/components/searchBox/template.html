@@ -1,0 +1,22 @@
+<button class="btn-search-top btn-transparent" ng-class="$root.isOpenSearch?'no-border':''" ng-click="toggleOpenSearch()">
+  <span ng-show="!$root.isOpenSearch">
+    <i class="sprite icon-search"></i>
+    <span class="verical-line">|</span>
+    <span>SEARCH</span>
+  </span>
+  <span ng-show="$root.isOpenSearch">
+    <span class="lnk-pink lnk-close">X</span> CLOSE
+  </span>
+</button>
+<div class="menu-hambuger menu-search" ng-class="$root.isOpenSearch ? 'open': ''">
+  <div class="top-search-container">
+    <button class="btn-icon-search btn-transparent no-border">
+      <i class="sprite icon-search"></i>
+    </button>
+    <input type="text" id="inputSearch" ng-model="searchText" class="form-control input-search-top" placeholder="Search for a TV, speaker or amplifier"
+      uib-typeahead="productName as product._fullName_ for product in searchProduct($viewValue) | limitTo:8" typeahead-on-select="ngModelOptionsSelected($event, $item)"
+      typeahead-loading="isLoading" typeahead-no-results="noResult">
+    <span class="autocomplete-msg" ng-show="isLoading">Loading...</span>
+    <span class="autocomplete-msg" ng-show="noResult">No results available</span>
+  </div>
+</div>

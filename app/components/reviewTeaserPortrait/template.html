@@ -1,0 +1,40 @@
+<div class="portail-box " >
+  <div class="product-bar sm-font">
+    <div class="clearfix">
+      <div class="pull-left">
+        <span class="product-catagory">
+          <img class="img-feature-product-type" src="{{product.category[0].image1}}" alt="">
+          {{product.typeName}}
+        </span>
+      </div>
+      <div class="pull-right">
+        <span class="produt-date">{{publishDate}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="relative product-box-portrait cursor-pointer" ng-click="openProductReview()">
+    <div class="product-score">
+      <span>{{product.overallScore}}</span>
+    </div>
+    <h4 class="feature-product-title">
+      <div>{{product._fullName_}}</div>
+    </h4>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="product-portrail-img">
+          <div>
+            <img src="{{product.image}}" alt="PRODUCT 1" class="img-responsive">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 mt-20">
+        <div class="product-short-desc">{{product.longDesc}}</div>
+        <div class="mt-30 text-center">
+          <a ng-click="openProductReview()" class="lnk-yellow">Learn more
+            <span class="prev-text">></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="review-feature">
+  <div class="container">
+    <h2 class="section-heading">Feature</h2>
+    <div class="mt-60 sm-mt-30">
+      <review-teaser-landscape product="productHighlight"></review-teaser-landscape>
+    </div>
+    <div class="row mt-60 sm-mt-30">
+      <div class="col-md-4" ng-repeat="data in featureProduct track by $index">
+        <review-teaser-portrait product="data"></review-teaser-portrait>
+      </div>
+    </div>
+  </div>
+</div>

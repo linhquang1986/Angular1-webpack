@@ -1,0 +1,42 @@
+<div class="panel topscoring-panel">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-md-9 col-sm-9 col-xs-8" style="padding-right: 0">
+        <div class="prod-top-cat">
+          <img class="img-topscoring-product-type" src="{{category.image2}}" alt="">
+          <span class="topscore-catname">{{category.name}}</span>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-4" style="padding-left: 0">
+        <div class="text-center thx-text">
+          <strong>THX</strong>
+          <br>
+          <span class="sm-font">MARK SCORE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <ul class="list-unstyled list-product-top">
+      <li class="clearfix relative cursor-pointer" ng-repeat="product in products track by $index" ng-click="viewProduct(product.id)">
+        <div class="top-prod-img flex-box pull-left hidden-xs">
+          <div class="flex-container">
+            <img src="{{product.image}}" alt="" class="img-responsive">
+          </div>
+        </div>
+        <div class="top-prod-name ">
+          <div class="flex-box ">
+            <div class="flex-container text-left">
+              <span class="order-number">{{$index+1}}</span>
+              <span class="top-prod-cat bold">{{product.brandName}}</span>
+              <span class="top-prod-title">{{product.model}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="top-prod-score">{{product.overallScore}}</div>
+
+      </li>
+
+    </ul>
+  </div>
+</div>

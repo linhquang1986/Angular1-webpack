@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="row d-flex xs-d-block">
+        <div class="score-portrait {{'col-md-'+12/(scoringData.length)}}" ng-repeat="data in scoringData track by $index">
+            <h4 class="text-uppercase text-center bold">{{data.brandName + ' ' + data.productName}}</h4>
+            <scoring-bar-detail scoring-data="data" orientation='PORTRAIT'></scoring-bar-detail>
+        </div>
+    </div>
+</div>

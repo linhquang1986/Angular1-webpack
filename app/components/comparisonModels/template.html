@@ -1,0 +1,22 @@
+<div ng-show="models.length>0">
+  <p class="semi-bold text-uppercase">Choose Up to 3 models:</p>
+  <div class="clearfix mt-20 quick-compare-wrap">
+    <ul class="list-unstyled list-items-compare">
+      <li class="compare-product-box text-center relative" ng-repeat="item in models track by $index">
+        <span class="btn-remove-product" ng-click="removeModel(item.model)">X</span>
+        <div class="prod-box-title">
+          <span class="bold">{{item.model.brandName}}</span> <br>
+          {{item.model.model}}
+        </div>
+        <div class="prod-box-img flex-box">
+          <!--<div class="flex-container">-->
+            <img src="{{item.model.image}}" class="img-responsive" alt="">
+          <!--</div>-->
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="text-center mt-30">
+    <button class="btn btn-transparent btn-yellow text-uppercase" ng-click="submitCompare()">VIEW SELECTED COMPARISON</button>
+  </div>
+</div>

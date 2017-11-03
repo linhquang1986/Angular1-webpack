@@ -1,0 +1,27 @@
+<div class="container">
+    <div class=" lst-mesurements">
+        <ul class="clearfix">
+            <li class="" ng-repeat="measurement in measurements track by $index" ng-class="measurement.category==currentMeasurement.category?'active':''"
+                ng-click="chooseMeasurement(measurement)">
+                <span>{{measurement.category}}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="mesurement-contain">
+        <p>{{currentMeasurement.desc}}</p>
+        <div class="row mt-30">
+            <div class="col-md-6 mesurement-item" ng-repeat="item in currentMeasurement.items" style="margin: 20px 0px;">
+                <div class="text-center">
+                    <div class="flex-box mesurement-img">
+                        <img src="{{item.image}}" alt="" >
+                    </div>
+                    <div class="text-uppercase mt-20 ">
+                        <strong>{{item.name}}</strong>
+                        </br>
+                        <strong>{{item._fullName_}}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

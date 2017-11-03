@@ -1,0 +1,26 @@
+<section class="home-hero" ng-style="homeBackgroundStyle">
+  <div class="container text-center white-color">
+    <div class="hero-container animated fadeInDown">
+      <h1 class="mt-0">THX Standard</h1>
+      <div>The source for independent performance measurements of select audio and video products</div>
+      <a href="#!/about-page" class="btn btn-transparent btn-yellow btn-compare mt-35 sm-font white-color">Learn more about THX Standard</a>
+    </div>
+  </div>
+</section>
+<section class="touts">
+  <div class="touts-container">
+    <div class="clearfix">
+      <div ng-repeat="item in items track by $index" ng-bind-html="item"></div>
+    </div>
+  </div>
+</section>
+<script>
+  $(document).ready(function () {
+    if ($(window).width() > 767) {
+      $('.home-hero').parallax("50%", 0.7);
+    }
+    else {
+      $('.home-hero').addClass("mobile-view");
+    }
+  })
+</script>

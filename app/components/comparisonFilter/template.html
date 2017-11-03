@@ -1,0 +1,51 @@
+<div class="filter-brand-model mt-60">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <category-carousel category-id="categoryId" color='black' class="light-filter"></category-carousel>
+      </div>
+      <div class="col-md-4">
+        <div class="light-filter">
+          <div class="filter-heading filter-step second-step text-uppercase">Find your product</div>
+          <brand-model-selector category-id="categoryId" on-model-select="onModelSelect(item)"></brand-model-selector>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-grey mt-20" ng-show="listComparisonModel.length>0">
+    <div class="comparison-models">
+      <div class="container">
+        <comparison-models models="listComparisonModel" on-delete="removeModel(modelId)" on-submit='compare()'></comparison-models>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-30">
+  <div class="grey-line"></div>
+  <div class="filter-advanced">
+    <p class="semi-bold text-uppercase">Advanced filters</p>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="clearfix">
+          <div class="pull-left">
+            <span class="sm-font text-uppercase">Price range</span>
+          </div>
+          <div class="price-slider">
+            <rzslider rz-slider-model="slider.minValue" rz-slider-high="slider.maxValue" rz-slider-options="slider.options"></rzslider>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <span class="sm-font text-uppercase roomsize-checkbox roomsize-label">Room size</span>
+        <span class="roomsize-checkbox" ng-repeat="size in roomsize track by $index">
+          <input name="selectedRoomsize[]" type="checkbox" id="roomsize-{{$index}}" value="{{size}}" checked />
+          <label for="roomsize-{{$index}}" ng-click="toggleSelection(size)">{{size}}</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="grey-line"></div>
+  <div class="text-center mt-35">
+    <button class="btn btn-transparent btn-yellow text-uppercase btn-comparision" ng-click="getListComparison()">UPDATE LIST BELOW</button>
+  </div>
+</div>

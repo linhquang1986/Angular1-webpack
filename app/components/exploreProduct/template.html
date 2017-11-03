@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <category-carousel category-id="selectedCategory" color='black' class="light-filter"></category-carousel>
+    </div>
+    <div class="col-md-4">
+      <div class="light-filter">
+        <div class="filter-heading filter-step second-step text-uppercase">Find your product</div>
+        <brand-model-selector category-id="selectedCategory" on-model-select="onModelSelect(item)"></brand-model-selector>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-grey mt-20" ng-show="selectedModelList.length>0">
+  <div class="comparison-models">
+    <div class="container">
+      <comparison-models models="selectedModelList" on-delete="removeModel(modelId)" on-submit='compare()'></comparison-models>
+    </div>
+  </div>
+</div>

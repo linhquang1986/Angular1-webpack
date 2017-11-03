@@ -1,0 +1,46 @@
+<div class="table-comparision mt-35">
+  <table class="table table-responsive table-compare-border">
+    <thead class="bg-dark white-color">
+      <tr>
+        <th>
+          <span class="cursor-pointer tooltip-click" ng-click="sort('name')" uib-tooltip="Sort by model" tooltip-placement="bottom" tooltip-class="tooltip-white"> Make/Model
+            <span ng-show="sortData.name" ng-class="sortData.name==='dec'?'arrow-up d-inline-block':'arrow-down d-inline-block'"></span>
+          </span>
+
+        </th>
+        <th>
+          <span class="cursor-pointer" ng-click="sort('price')" uib-tooltip="Sort by price" tooltip-placement="bottom" tooltip-class="tooltip-white">Price
+            <span ng-show="sortData.price" ng-class="sortData.price==='dec'?'arrow-up d-inline-block':'arrow-down d-inline-block'"></span>
+          </span>
+        </th>
+        <th class="text-center">
+          <span class="cursor-pointer" ng-click="sort('score')" uib-tooltip="Sort by overall score" tooltip-placement="bottom" tooltip-class="tooltip-white">Overall Score
+            <span ng-show="sortData.score" ng-class="sortData.score==='dec'?'arrow-up d-inline-block':'arrow-down d-inline-block'"></span>
+          </span>
+        </th>
+        <th style="width: 150px">Compare</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in allModel track by $index">
+        <td ng-click='viewProduct(item.model.id)' class="cursor-pointer compare-column">
+          <span class="img-model">
+            <img src="{{item.model.image}}" alt="">
+          </span>
+          <span class="compare-brand-model">
+            <span class="bold">{{item.model.brandName}}</span>
+            <span>{{item.model.model}}</span>
+          </span>
+        </td>
+        <td class="compare-column">{{item.model.msrp | currency : symbol:0}}</td>
+        <td class="text-center compare-column">{{item.model.overallScore}}</td>
+        <td class="compare-column">
+          <button ng-if="!item.inListComparison" ng-click="add(item.model)" class="bold btn-action-compare">
+            <span class="icon-circle">+</span> Add</button>
+          <button ng-if="item.inListComparison" ng-click="remove(item.model)" class="bold btn-action-compare">
+            <span class="icon-circle icon-minus">-</span> Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

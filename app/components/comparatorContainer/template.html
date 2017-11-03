@@ -1,0 +1,29 @@
+<div class="comparator-component white-color">
+  <div class="container white">
+    <h1 class="text-uppercase mt-0">Quick Comparison</h1>
+    <div class="row mt-60">
+      <div class="col-md-4 bd-right-ver-grey m-padding-r-20">
+        <div class="sm-mt-30">
+          <category-carousel category-id="selectedCategory"></category-carousel>
+        </div>
+      </div>
+      <div class="col-md-4 bd-right-ver-grey m-padding-lr-20">
+        <div class="sm-mt-30">
+          <div class="filter-heading filter-step second-step text-uppercase">Find your product</div>
+          <brand-model-selector category-id="selectedCategory" on-model-select="onModelSelect(item)" inline="false" option-dropdown="optionDropdown"></brand-model-selector>
+        </div>
+      </div>
+      <div class="col-md-4 m-padding-lr-20">
+        <div class="sm-mt-30">
+          <div class="filter-heading filter-step third-step text-uppercase">Compare up to 3</div>
+          <div class="list-brand-filter mt-10">
+            <button class="btn-border btn-transparent sm-font" ng-repeat="item in selectedModelList track by $index">
+              <span class="lnk-yellow" ng-click="removeModel(item.id)" style="position:relative; z-index:1">X</span> {{item._fullName_}}
+            </button>
+          </div>
+          <button class="btn btn-transparent btn-yellow btn-compare mt-10" ng-click="compare()" ng-disabled="selectedModelList.length===0">Compare</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

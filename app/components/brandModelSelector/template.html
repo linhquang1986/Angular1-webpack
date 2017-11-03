@@ -1,0 +1,8 @@
+<div class="row">
+  <div ng-class="inline?'col-md-6':'col-md-12'">
+    <custom-dropdown items="brandData" on-select="_onBrandSelect(item)" placeholder="CHOOSE A BRAND" options='dropdownOptions'></custom-dropdown>
+  </div>
+  <div ng-class="inline?'col-md-6':'col-md-12 mt-20'" class="xm-mt-10">
+    <custom-dropdown items="modelData" on-select="_onModelSelect(item)" placeholder="CHOOSE A MODEL" options='dropdownOptions'></custom-dropdown>
+  </div>
+</div>

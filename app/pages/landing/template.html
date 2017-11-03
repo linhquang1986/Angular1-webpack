@@ -1,0 +1,20 @@
+<div class="landing-page page-wrapper">
+  <header-bar></header-bar>
+  <home-hero></home-hero>
+  <comparator-container></comparator-container>
+  <!--<teaser-about></teaser-about>-->
+  <div>
+    <review-feature-container categories="categories"></review-feature-container>
+  </div>
+  <div class="topscoring-section">
+    <div class="container">
+      <h1 class="mt-0">TOP SCORING</h1>
+      <div class="row mt-30">
+        <div class="col-md-6 topscoring-by-cat" ng-repeat="category in categories">
+          <top-scoring-container category="category"></top-scoring-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer-bar></footer-bar>
+</div>

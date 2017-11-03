@@ -1,0 +1,21 @@
+<div class="specs-container">
+  <div>
+    <h4 class="text-uppercase text-center bold ng-binding prod-name">{{product.brandName}} {{product.model}}</h4>
+    <div class="flex-box img-spec-wrapper">
+      <a href="#!/productreview-page?productId={{product.id}}">
+        <img class="img-responsive " src='{{product.image}}' />
+      </a>
+    </div>
+  </div>
+  <div class="mt-35">
+    <table class='table table-bordered table-specs' width="100%">
+      <tr ng-repeat="spec in specs track by $index">
+        <td>{{spec.name}}</td>
+        <td ng-if="spec.isLink" style="word-break:break-all;">
+          <a href="{{spec.value}}" target="_blank">{{spec.value}}</a>
+        </td>
+        <td ng-if="!spec.isLink" style="word-break:break-all;">{{spec.value}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

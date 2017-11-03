@@ -1,0 +1,19 @@
+<div class="container ">
+    <div class="product-compare-filter">
+        <div class="compare-filter-container">
+            <p class="semi-bold text-uppercase">ADD NEW COMPARISON</p>
+            <div class="row">
+                <div class="col-md-9">
+                    <brand-model-selector category-id="productType" on-model-select="selectModel(item)" inline="true" option-dropdown="optionDropdown"></brand-model-selector>
+                </div>
+                <div class="col-md-3 xm-mt-10">
+                    <button class="btn btn-transparent btn-yellow btn-add-compare" ng-disabled="!selectedModel.model" ng-click="!selectedModel.model || addModelToComparison()">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="dark-line"></div>
+        <div class="compare-filter-container">
+            <comparison-models models="comparisonModels" on-submit="onSubmitCompare()" on-delete="onDeleteModel(modelId)"></comparison-models>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="text-center mt-20">
+  <div uib-dropdown on-toggle="toggled(open)" class="dropdown-filer-container">
+    <a href id="model-dropdown" class="sm-font dropdown-placeholder white-color" uib-dropdown-toggle>
+      <span class="text-show">{{selectedModel.model || 'Choose a model'}} <span class="triangle-down lnk-yellow">&#9661;</span></span>
+    </a>
+    <ul class="dropdown-menu dropdown-dark" uib-dropdown-menu aria-labelledby="model-dropdown">
+      <li ng-repeat="model in models">
+        <a class="white-color" href ng-click="chooseModel(model)">{{model._fullName_}}</a>
+      </li>
+    </ul>
+  </div>
+  <!--<div class="list-brand-filter">
+    <button class="btn-border btn-transparent sm-font" ng-repeat="item in listModelsFilter track by $index">
+      <span class="lnk-yellow" ng-click="removeChooseModel(item)">X</span> {{item.model}}
+    </button>
+  </div>-->
+</div>

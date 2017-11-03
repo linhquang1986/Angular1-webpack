@@ -1,0 +1,41 @@
+<div ng-class="{'container': config.orientation==='LANDSCAPE'}">
+  <div class="score-bar clearfix">
+    <div class="row">
+      <div ng-class="config.orientation==='LANDSCAPE'? 'col-md-6 landscape-big-image': 'col-md-12 portrait-big-image'">
+        <div class="product-hero-img flex-box">
+          <a href="#!/productreview-page?productId={{data.id}}">
+            <img src="{{data.image}}" alt="" class="img-responsive">
+          </a>
+        </div>
+      </div>
+      <div ng-class="config.orientation==='LANDSCAPE'? 'col-md-6': 'col-md-12'">
+        <h2 class="mt-0" ng-if="config.orientation==='LANDSCAPE'"><strong>{{data.type}}</strong> Scores </h2>
+        <div class="scoring-container">
+          <p class="text-uppercase" ng-show="data.title">{{data.title}}</p>
+          <div class="row no-gutters  mt-10">
+            <div class="col-md-6"><span class="bold">Overall Score</span></div>
+            <div class="col-md-6">
+              <div class="relative scorebar-line">
+                <span class="score-number lnk-yellow text-center">{{data.overallScore}}</span>
+                <div class="progress barscore-progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="{{data.overallScore}}" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': data.overallScore+'%'}"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div ng-repeat="score in data.product_scores track by $index" class="row no-gutters  mt-10">
+            <div class="col-md-6"><span class="bold">{{score.name}}</span></div>
+            <div class="col-md-6">
+              <div class="relative scorebar-line">
+                <span class="score-number lnk-yellow text-center">{{score.score}}</span>
+                <div class="progress barscore-progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="{{score.score}}" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': score.score+'%'}"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<a class="white-color btn btn-top-menu" ng-click="toggleMenu()">
+  <span ng-show="!$root.isOpenMenu">
+    <i class="sprite icon-menu"></i> &nbsp;
+    <span>MENU</span>
+  </span>
+  <span ng-show="$root.isOpenMenu">
+    <span class="lnk-pink">X</span> CLOSE
+  </span>
+</a>
+<div class="menu-hambuger menu-links" ng-class="$root.isOpenMenu ? 'open': ''">
+  <ul class="list-unstyled lst-menu">
+    <li ng-repeat="cat in categories">
+      <a href="#!/filter-compare-page?productTypeId={{cat.id}}" class="">{{cat.name}}</a>
+    </li>
+    <li><a href="#!/about-page">About</a></li>
+  </ul>
+</div>
